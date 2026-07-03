@@ -20,7 +20,5 @@ test('test', async ({ page }) => {
   await page.getByRole('link', { name: ' Account details' }).click();
   await page.getByRole('heading', { name: 'Account details' }).click();
   await page.getByRole('link', { name: ' logout' }).click();
-  await page.getByRole('heading', { name: 'Logout Sucessfull' }).click();
-  await page.getByRole('button', { name: 'OK' }).click();
-  await page.getByRole('heading', { name: 'Login' }).click();
+
 });

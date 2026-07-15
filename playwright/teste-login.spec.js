@@ -1,4 +1,18 @@
 import { test, expect } from '@playwright/test';
+import { CredenciaisHelper } from '../Play/CredenciaisHelper';
+
+test('teste de login', async ({ page }) => {
+  const credenciais = CredenciaisHelper.usuarioPadrao();
+
+  await page.goto('/');
+  await page.fill('#Usuário', credenciais.usuario);
+  await page.fill('#Senha', credenciais.senha);
+  await page.click('#Entrar');
+  
+  await expect(page.getByText('Bem-vindo ao')).toBeVisible();
+   
+
+});
 
 test('test', async ({ page }) => {
   await page.goto('https://automationpratice.com.br/');

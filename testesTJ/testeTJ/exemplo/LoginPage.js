@@ -26,7 +26,7 @@ const { expect }  = require ('@playwright/test');
     await page.getByRole('button', { name: 'login' }).click();
   }
     const mensagemEmailVazioQA = async (page) => {
-    await expect(page.getByText('E-mail inválido.')).toBeVisible({timeout: 10000})
+    await expect(page.getByText('E-mail inválido.')).toBeVisible({timeout: 1000})
   }
   const cadastroQA = async (page) => {
     await page.getByRole('link', { name: ' Cadastro' }).click();
@@ -37,8 +37,9 @@ const { expect }  = require ('@playwright/test');
     await page.locator('#password').click();
     await page.locator('#password').fill('123456');
     await page.getByRole('button', { name: 'Cadastrar' }).click();
-    await expect(page.getByText('Cadastro realizado!')).toBeVisible({timeout: 10000})
+    await expect(page.getByText('Cadastro realizado!')).toBeVisible({timeout: 1000})
     await page.getByRole('button', { name: 'OK' }).click();
+  
     await expect(page.getByRole('link', { name: ' Dashboard' })).toBeEnabled({timeout: 1000});
 
 

@@ -39,10 +39,7 @@ const { expect }  = require ('@playwright/test');
     await page.getByRole('button', { name: 'Cadastrar' }).click();
     await expect(page.getByText('Cadastro realizado!')).toBeVisible({timeout: 10000})
     await page.getByRole('button', { name: 'OK' }).click();
-   // await expect(page.getByText('Dashboard')).toBeVisible({timeout: 10000})
-  //await page.getByRole('link', { name: ' Dashboard' }).click();
-  
-    await expect(page.getByRole('link', { name: ' Dashboard' })).toBeEnabled({timeout: 10000});
+    await expect(page.getByRole('link', { name: ' Dashboard' })).toBeEnabled({timeout: 1000});
 
 
   }
